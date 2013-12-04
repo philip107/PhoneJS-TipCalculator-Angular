@@ -1,0 +1,49 @@
+<div dx-toolbar="{ items: [{ align: 'center', text: 'Tip Calculator' }] }"></div>
+
+<div class="dx-fieldset top-fieldset">
+    <div class="dx-field">
+        <div class="dx-field-label">Bill Total:</div>
+        <div id="billTotalInput" class="dx-field-value" dx-number-box="{ bindingOptions: { value: 'vm.billTotal' }, placeholder: 'Type here...', valueUpdateEvent: 'keyup', min: 0 }"></div>
+    </div>
+</div>
+
+<div class="dx-fieldset">
+    <div class="dx-field slider-container">
+        <div class="slider-title">Tip, %</div>
+        <div class="slider-body">
+            <div dx-slider="{ min: 0, max: 25, step: 1, activeStateEnabled: true, bindingOptions: { value: 'vm.tipPercent' } }"></div>
+        </div>
+        <div class="slider-value">{{vm.tipPercent}} %</div>
+    </div>
+    <div class="dx-field slider-container">
+        <div class="slider-title">Split:</div>
+        <div class="slider-body">
+            <div dx-slider="{ min: 1, step: 1, max: 10, activeStateEnabled: true, bindingOptions: { value: 'vm.splitNum' } }"></div>
+        </div>
+        <div class="slider-value">{{vm.splitNum}}</div>
+    </div>
+</div>
+
+<div class="round-buttons">
+    <div dx-button="{ text: 'Round Down', clickAction: vm.roundDown }"></div>
+    <div dx-button="{ text: 'Round Up', clickAction: vm.roundUp }"></div>
+</div>
+
+<div id="results" class="dx-fieldset">
+    <div class="dx-field">
+        <span class="dx-field-label">Total to pay</span>
+        <span class="dx-field-value" style="font-weight: bold">{{vm.totalToPay() | currency}}</span>
+    </div>
+    <div class="dx-field">
+        <span class="dx-field-label">Total per person</span>
+        <span class="dx-field-value">{{vm.totalPerPerson() | currency}}</span>
+    </div>
+    <div class="dx-field">
+        <span class="dx-field-label">Total tip</span>
+        <span class="dx-field-value">{{vm.totalTip() | currency}}</span>
+    </div>
+    <div class="dx-field">
+        <span class="dx-field-label">Tip per person</span>
+        <span class="dx-field-value">{{vm.tipPerPerson() | currency}}</span>
+    </div>
+</div>

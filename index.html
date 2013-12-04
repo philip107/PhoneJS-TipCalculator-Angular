@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en" ng-app="tipCalculator">
+<head>
+    <meta charset="utf-8">
+    <title>Tip Calculator Demo</title>
+    
+    <link rel="stylesheet" type="text/css" href="css/dx.common.css" />
+    <link rel="stylesheet" type="text/css" href="css/dx.ios.default.css" />
+    <link rel="stylesheet" type="text/css" href="css/dx.android.holo-dark.css" />
+    <link rel="stylesheet" type="text/css" href="css/dx.win8.black.css" />
+    <link rel="stylesheet" type="text/css" href="css/dx.tizen.black.css" />
+    <link rel="stylesheet" type="text/css" href="css/dx.generic.light.css" />
+    <link rel="stylesheet" type="text/css" href="css/app.css" />
+</head>
+<body>
+    <div ng-view class="dx-viewport dx-ios-stripes"></div>
+
+    <script src="lib/jquery-2.0.3.min.js"></script>
+    <script src="lib/globalize.min.js"></script>
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/dx.phonejs.js"></script>
+
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+
+    <script>
+        DevExpress.devices.attachCss($(".dx-viewport"));
+    </script>
+</body>
+</html>
